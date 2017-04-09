@@ -118,6 +118,18 @@ public class Stepdefs {
         element.submit();
     }
     
+     @Given("^user with username \"([^\"]*)\" with password \"([^\"]*)\" is successfully created$")
+    public void user_with_username_with_password_is_successfully_created(String username, String password) throws Throwable {
+        new_user_selected();
+        newUserWith(username,password);
+    }
+    
+    @Given("^user with username \"([^\"]*)\" and password \"([^\"]*)\" is unsuccessfully created$")
+    public void user_with_username_and_password_is_unsuccessfully_created(String username, String password) throws Throwable {
+        new_user_selected();
+        newUserWith(username,password);
+    }
+    
     @After
     public void tearDown(){
         driver.quit();
